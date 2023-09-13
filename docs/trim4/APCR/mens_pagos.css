@@ -13,7 +13,7 @@
     width: 75%;
     /*height: 100vh;*/
     margin: 0 auto;
-    border: 1px solid black;
+    border: 3px solid #003049;
   }
   
   #header{
@@ -51,6 +51,14 @@
     border: 3px solid black;
     box-shadow: black 5px 5px 5px;
     text-align: center;
+  }
+
+  #boton-mensajes img{
+   /* float: right;*/
+    position: absolute;
+    top: 241px;
+    right: 215px;
+
   }
 
   #boton-admin{
