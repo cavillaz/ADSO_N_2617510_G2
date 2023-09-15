@@ -1,7 +1,7 @@
 *{
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
-   /*  color: #fdf0d5; */
+    color: #fdf0d5;
   }
 
   /*Paleta Colores
@@ -157,10 +157,53 @@
   h2{
     margin-left: 250px;
     font-size: 30px;
+    color: black;
   }
   .cuadro{
     margin-left: 250px;
     font-size: 30px;
+    width: 100px;
+  }
+  .boton{
+    width: 200px;
+    padding: 100px ;
+    margin-left: 250px;
+  }
+  
+  .barra-opciones{
+    display: flex;
+    justify-content: center;
+    color: black;
+  }
+  #acrobat{
+    text-align: center;
+    width: 100px;
+    margin-left: 60px;
+    float: none;
+    height: 100px;
+
+  }
+  .button {
+    flex: 1;
+    text-align: center;
+}
+.input[type="submit"] {
+  background-color: #780000;
+  display: flex;
+  width: 20%;
+  padding: 30px;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: center;
+  margin: 40px;
+}
+  #opciones{
+    width: 300px;
+    color: #000;
+  }
+  
+  #opciones option{
+    color: black;
   }
   label{
     width: 100%;

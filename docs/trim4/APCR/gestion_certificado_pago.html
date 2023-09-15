@@ -37,36 +37,25 @@
     <h2>Elija el año y mes a consultar</h2>      
   </div>
   <div class="cuadro">
-    <form action="#" method="post">
-        <label for="anio">Año:</label><br>
-        <select id="anio" name="anio">
-            <option value="2023">2023</option>
-            <option value="2024">2024</option>
-            <!-- Agrega más opciones de año si es necesario -->
-        </select><br><br><br>
-
-        <label for="mes">Mes:</label><br>
-        <select id="mes" name="mes">
-            <option value="enero">Enero</option>
-            <option value="febrero">Febrero</option>
-            <option value="marzo">Marzo</option>
-            <!-- Agrega más opciones de mes si es necesario -->
-        </select><br><br>
-        <div><br><br>
-            <img src="../APCR/img/acrobat-logo.png" alt="" class="imagen">
-            <input type="submit" value="Generar Certificado">
-        </div>
-
-        
-    </form>
+    <select name="opciones" id="opciones">
+           <option value="2023">2023</option>
+           <option value="2022">2022</option>
+           <option value="2021">2021</option>
+    </select>
   </div>
+    <div class="cuadro">
+      <select name="opciones" id="opciones">
+             <option value="Septiembre">Septiembre</option>
+             <option value="Agosto">Agosto</option>
+             <option value="Julio">Julio</option>
+      </select>
+    </div>
 
-  
-
-
-   
-  
-
+      <div class="contenido">
+          <img src="../APCR/img/acrobat-logo.png" alt="" class="imagen" id="acrobat" >
+          <button type="submit" class="input" onclick="abrirPDF()">Generar Certificado</button>
+      </div>
+    </div>
 
   <footer>
     <div class="footer">
@@ -116,6 +105,14 @@
           break;
       }
     });
+    
+    function abrirPDF() {
+      // Especifica la URL del archivo PDF que deseas abrir
+      var pdfURL = 'docs/certificado_pago.pdf';
+      
+      // Abre una nueva ventana del navegador con el PDF
+      window.open(pdfURL, '_blank');
+  }
 
   </script>
 </body>
