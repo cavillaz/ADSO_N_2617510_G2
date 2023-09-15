@@ -162,14 +162,25 @@
     
             <label for="horaFin">Hora de Fin:</label>
             <input type="time" id="horaFin" name="horaFin" required><br><br>
+
+            <label for="xlsxFormat">
+              <input type="checkbox" id="xlsxFormat" value="xlsx">CSV
+          </label>
+          <label for="pdfFormat">
+              <input type="checkbox" id="pdfFormat" value="pdf">PDF
+          </label><br><br>
     
-            <label>Formato de Archivo:</label><br><br>
-            <input type="checkbox" id="csvFormat" name="formato[]" value="csv">
-            <label for="csvFormat">CSV</label>
-            <input type="checkbox" id="pdfFormat" name="formato[]" value="pdf">
-            <label for="pdfFormat">PDF</label><br><br>
+            <!-- <label>Formato de Archivo:</label><br><br>
+            <input type="checkbox" id="xlsxFormat" value="xlsx">
+            <label for="xlsxFormat">CSV</label>
+            <input type="checkbox" id="pdfFormat" value="pdf">
+            <label for="pdfFormat">PDF</label><br><br> -->
+
+            <div class="button-container">
+              <button onclick="descargarArchivos()">Generar Reporte</button>
+          </div>
     
-            <input type="submit" value="Generar Archivo">
+            <!-- <input type="submit" value="Generar Archivo"> -->
         </form>
     </body>
     </html>
@@ -226,19 +237,47 @@
           break;
       }
     });
+        // Funcion de ventana emergente
+        const mostrarVentana = document.getElementById("mostrarVentana");
+        const cerrarVentana = document.getElementById("cerrarVentana");
+        const ventana = document.getElementById("ventana");
 
+        mostrarVentana.addEventListener("click", function () {
+            ventana.style.display = "block";
+        });
 
-const mostrarVentana = document.getElementById("mostrarVentana");
-const cerrarVentana = document.getElementById("cerrarVentana");
-const ventana = document.getElementById("ventana");
+        cerrarVentana.addEventListener("click", function () {
+            ventana.style.display = "none";
+        });
 
-mostrarVentana.addEventListener("click", function () {
-    ventana.style.display = "block";
-});
+      // Funcion Descargar archivos en PDF O XLSX
+      function descargarArchivos() {
+        const selectedFormats = [];
 
-cerrarVentana.addEventListener("click", function () {
-    ventana.style.display = "none";
-});
+        if (document.getElementById('xlsxFormat').checked) {
+            selectedFormats.push('XLSX');
+        }
+
+        if (document.getElementById('pdfFormat').checked) {
+            selectedFormats.push('PDF');
+        }
+
+        if (selectedFormats.length === 0) {
+            alert('Selecciona al menos un formato de archivo para descargar.');
+            return;
+        }
+
+        selectedFormats.forEach(format => {
+            const link = document.createElement('a');
+            link.href = `docs/reportes/${format}_file.${format.toLowerCase()}`;
+            link.download = `archivo.${format.toLowerCase()}`;
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    }
+
   </script>
 </body>
 </html>
