@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Inicio de sesión</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
 
   </head>
@@ -18,10 +19,7 @@
     <img src="../APCR/img/logoapcr.png" alt="">
    </div>
     <div class="container">
-      <div>
-        <button class="registerbtn" onclick="location.href='registro.html'">Registrarse</button>
-        <button class="loginbtn" onclick="location.href='index.html'">Iniciar sesión</button>
-      </div>
+
       <h1>Inicio de sesión</h1>
       <form action="/login" method="post">
         <label for="email"><b>Correo electrónico</b></label>
@@ -31,7 +29,7 @@
         <input type="password" placeholder="Ingrese su contraseña" name="password" required>
 
         <div class="olvido">
-          <a href="#">¿Olvidó su contraseña?</a>
+          <a href="olvidocontra.html">¿Olvidó su contraseña?</a>
         </div>
 
         <div class="check-clave">
@@ -42,7 +40,9 @@
        <div class="boton-ingreso">
         <button class="ingreso" onclick="location.href='barra.html'">Ingresar</button>
        </div> 
-        
+       <div class="boton-registro">
+        <button class="registerbtn" onclick="location.href='registro.html'">Registrarse</button>
+      </div>
 
         <div class="register">      
         </div>
