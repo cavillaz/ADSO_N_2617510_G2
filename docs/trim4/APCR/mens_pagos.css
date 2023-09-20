@@ -10,8 +10,8 @@
     display: grid;
     grid-template-columns: 20% 80%;
     grid-template-rows: 20% 80%;
-    width: 75%;
-    /*height: 100vh;*/
+    width: 55%;
+    height: 60%;
     margin: 0 auto;
     border: 3px solid #003049;
   }
