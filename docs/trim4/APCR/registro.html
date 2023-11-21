@@ -20,10 +20,14 @@
       <div>
       </div>
       <h1>Registrarse</h1>
-      <form action="/login" method="post">
+      <!-- <form action="/login" method="post"> -->
+      <form action="bdd/conexion.php" method="post" charset=UTF-8>  
 
         <label for="text"><b>Nombre</b></label>
         <input type="text" placeholder="Ingrese su nombre" name="text" required>
+        
+        <label for="password"><b>Identificacion </b></label>
+        <input type="password" placeholder="N° Ingrese" name="password" required>
 
         <label for="text"><b>Apartamento</b></label>
         <input type="text" placeholder="Ingrese su apartemaneto" name="text" required>
@@ -39,8 +43,10 @@
 
         <label for="password"><b>Contraseña</b></label>
         <input type="password" placeholder="Ingrese su contraseña" name="password" required>
+        
+        
 
-        <button class="registro" onclick="location.href='index.html'">Registrarme</button>
+        <button class="registro" onclick="location.href='registrar.php'">Registrarme</button>
         <div class="register">
     
           <div class="footer">
@@ -48,4 +54,5 @@
                Realizado por SOFTNERD todos los derechos reservados &copy;
              </h6>
            </div>
+      </form>
 </html>
