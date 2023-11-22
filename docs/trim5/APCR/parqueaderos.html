@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi página</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <style>
+    *{
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 20px;
+      color: #fdf0d5;
+    }
+
+    /*Paleta Colores
+    780000
+    c1121f
+    fdf0d5
+    003049
+    669bbc
+    */
+
+    /* Agrega aquí el código CSS */
+    .menu {
+      position: fixed;
+      top: 0;
+      left: -300px;
+      width: 350px;
+      height: 100%;
+      background-color: #003049;
+      transition: left 0.3s ease-in-out;
+      z-index: 1;
+    }
+
+    .menu.open {
+      left: 0;
+      width: 275px;
+    }
+
+    /* Modifica el estilo del botón Menú para centrar el texto y colocar el ícono a la derecha */
+    .menu-button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* Centra horizontalmente y coloca el ícono a la derecha */
+      width: 100%;
+      padding: 5px 10px 0px 20px;
+      background-color: #669bbc;
+      color: #fdf0d5;
+      border: none;
+      cursor: pointer;
+      font-size: 60px;
+    }
+
+    .menu-button .material-icons {
+      font-size: 35px;
+      margin-left: 10px; /* Espacio entre el texto y el icono */
+      font-size: 4 0px;
+    }
+
+ 
+
+    .menu-list {
+      margin-top: 0;
+      padding: 0;
+      text-align: right;
+      list-style: none;
+      text-decoration: bold;
+    }
+
+    .menu-list li {
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu-list li a {
+      display: flex;
+      align-items: center;
+      padding: 0px 9px 0px 10px; /* Ajusta el padding según sea necesario */
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    .menu-list li a .material-icons {
+      margin-left: auto; /* Coloca el icono a la derecha */
+
+      font-size: 35px;
+    }
+
+    .menu-list li a:hover {
+      background-color: #444;
+      transform: scale(1.01);
+      transition: transform .3s;
+    }
+
+    i {
+        margin-left: 12px; /* Espacio entre el icono y el texto */
+        vertical-align: middle;
+
+       
+    }
+
+    .tipo_boton{
+        margin-top: 90px;
+        border-radius: 50px;
+        text-align: right;
+        
+    }
+
+    .material-icons{
+      font-size: 35px;
+
+    }
+
+    .logo{
+      width: 200px;
+      height: 150px;
+      padding: 50px 40px 0px 0px;
+    }
+
+    .logo2{
+      width: 500px;
+      height: 400px;
+      align-items: center;
+    }
+
+
+
+    body{
+      background-color: #fdf0d5;
+    }
+
+    footer h1{
+      background-color: #780000;
+      display: flex;
+      justify-content: center;
+      color: fdf0d5;
+      padding: 15px;
+    }
+
+    .informacion {
+        display: flex;
+        flex-direction: column; 
+        align-items: left; 
+        text-align: left; 
+    }
+
+    .contenido {
+        display: flex;
+        justify-content: left;
+    }
+    .informacion h1{
+        font-family: 'Times New Roman', Times, serif;
+        color: black;
+        margin-left: 50px;
+        font-size: 50px;
+    }
+
+    .informacion p{
+        font-family: 'Times New Roman', Times, serif;
+        color: black;
+        margin-top: 50px;
+        margin-left: 50px;  
+        font-size: 30px;
+    }
+
+    .material-symbols-outlined {
+        color: black;
+        margin-left: 50px;
+        
+      font-variation-settings:
+         'FILL' 0,
+          'wght' 9700,
+          'GRAD' 200,
+          'opsz' 48
+          
+     }
+      
+    #layout-iconos {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    height: 650px;
+    align-items: flex-start;
+    padding: 5px;
+    margin-top: 90px;
+    }
+
+    .caja {
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+    }
+
+    .material-symbols-outlined {
+    color: green;
+    font-size: 94px;
+    }
+
+    .caja P{
+      color: black;
+      font-size: 30px;
+      text-decoration: none;
+      text-align: center;
+      margin: 0% ;
+      margin-left: 50px;
+    }
+
+    .informacion img{
+        width: 150px;
+        margin-left: 60px;
+        float: none;
+    }
+     
+  </style>
+</head> 
+<body>
+  <!-- Agrega aquí el código HTML -->
+
+  <div class="menu" aria-labelledby="menu-button">
+
+    <ul class="menu-list" id="menu-list" role="menu">
+      <button class="menu-button" title="Menú" id="menu-button" aria-expanded="false" aria-controls="menu-list">Menú<i class="material-icons">list</i></button>
+      <li><a class="tipo_boton" title="Administrar zonas" href="../APCR/adminzonas.html" role="menuitem">Administrar zonas<i class="material-icons" >directions_car</i></a>
+      <li><a class="tipo_boton" title="Mensajeria y pagos"  href="../APCR/admin_mens_pag.html" role="menuitem">Mensajeria y pagos<i class="material-icons">sms</i></a>
+      <li><a class="tipo_boton" title="Reportes" href="#" role="menuitem">Reportes<i class="material-icons">request_page</i></a>
+      <li><a class="tipo_boton" title="Administración usuarios" href="#" role="menuitem">Administración usuarios<i class="material-icons">person</i></a>
+      <li><a class="tipo_boton" title="Salir" href="index.html" role="menuitem">Salir<i class="material-icons">exit_to_app</i></a></li>
+      <li>
+        <img class="logo" src="../APCR/img/logoapcr.png" alt="" >
+      </li>
+    </ul>
+  </div>
+  <div class="informacion">
+    <h1>Gestión de Parqueaderos</h1>
+    <div class="contenido">
+      <img src="../APCR/img/coche-estacionado.png" alt="" class="imagen">
+      <p>En este espacio podrá realizar la gestión parqueaderos <br>desde la solicitud 
+          hasta el apartado de parqueadero para visitantes.
+      </p>
+    </div>
+  </div>
+  
+
+  <section id="layout-iconos">
+    <div class="caja red">
+      <span class="material-symbols-outlined" id="icon1">directions_car</span>
+        <p>001</p>
+    </div>
+    <div class="caja red">
+      <span class="material-symbols-outlined" id="icon2">directions_car</span>
+    <p>002</p>
+    </div>
+    <div class="caja red">
+      <span class="material-symbols-outlined" id="icon3">directions_car</span>
+      <p>003</p>
+    </div>
+    <div class="caja red">
+      <span class="material-symbols-outlined" id="icon4">directions_car</span>
+      <p>004</p>
+    </div>
+    <div class="caja red">
+      <span class="material-symbols-outlined" id="icon5">directions_car</span>
+      <p>005</p>
+    </div>
+    <div class="caja red">
+      <span class="material-symbols-outlined" id="icon6">directions_car</span>
+      <p>006</p>
+    </div>
+    <div class="caja red">
+      <span class="material-symbols-outlined" id="icon7">directions_car</span>
+      <p>007</p>
+    </div>
+    <div class="caja red">
+      <span class="material-symbols-outlined" id="icon8">directions_car</span>
+      <p>008</p>
+    </div>
+    <div class="caja red">
+      <span class="material-symbols-outlined" id="icon9">directions_car</span>
+      <p>009</p>
+    </div>
+    <div class="caja red">
+    <span class="material-symbols-outlined" id="icon10">directions_car</span>
+    <p>010</p>
+    </div>
+    <div class="caja red">
+    <span class="material-symbols-outlined" id="icon11">directions_car</span>
+    <p>011</p>
+    </div>
+    <div class="caja red">
+    <span class="material-symbols-outlined" id="icon12">directions_car</span>
+    <p>012</p>
+    </div>
+    <div class="caja red">
+      <span class="material-symbols-outlined" id="icon13">directions_car</span>
+      <p>013</p>
+    </div>
+    <div class="caja red">
+      <span class="material-symbols-outlined" id="icon14">directions_car</span>
+      <p>014</p>
+    </div>
+    <div class="caja red">
+      <span class="material-symbols-outlined" id="icon15">directions_car</span>
+      <p>015</p>
+    </div>
+    <div class="caja red">
+      <span class="material-symbols-outlined" id="icon16">directions_car</span>
+      <p>016</p>
+    </div>
+    <div class="caja red">
+      <span class="material-symbols-outlined" id="icon17">directions_car</span>
+      <p>017</p>
+    </div>
+    <div class="caja red">
+      <span class="material-symbols-outlined" id="icon18">directions_car</span>
+      <p>018</p>
+    </div>
+    <div class="caja red">
+      <span class="material-symbols-outlined" id="icon19">directions_car</span>
+      <p>019</p>
+    </div>
+    <div class="caja red">
+      <span class="material-symbols-outlined" id="icon20">directions_car</span>
+      <p>020</p>
+    </div>
+    <div class="caja red">
+      <span class="material-symbols-outlined" id="icon21">directions_car</span>
+      <p>021</p>
+    </div>
+    <div class="caja red">
+      <span class="material-symbols-outlined" id="icon22">directions_car</span>
+      <p>022</p>
+    </div>
+    <div class="caja red">
+      <span class="material-symbols-outlined" id="icon23">directions_car</span>
+      <p>023</p>
+    </div>
+    <div class="caja red">
+      <span class="material-symbols-outlined" id="icon24">directions_car</span>
+      <p>024</p>
+    </div>
+  </section>
+  
+
+
+  <footer>
+    <div class="footer">
+      <h1>
+        Realizado por SOFTNERD todos los derechos reservados &copy;
+      </h1>
+    </div>
+  </footer>
+
+  <script>
+    var menuButton = document.querySelector('.menu-button');
+    var menu = document.querySelector('.menu');
+    var menuList = document.querySelector('.menu-list');
+
+    menuButton.addEventListener('click', function() {
+      var expanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
+      menuButton.setAttribute('aria-expanded', !expanded);
+      menu.classList.toggle('open');
+      if (menu.classList.contains('open')) {
+        menuList.querySelector('a').focus();
+      }
+    });
+
+    menuList.addEventListener('keydown', function(event) {
+      var firstItem = menuList.querySelector('a');
+      var lastItem = menuList.querySelectorAll('a')[menuList.querySelectorAll('a').length - 1];
+      var currentElement = event.target;
+      switch (event.keyCode) {
+        case 27: // Escape
+          menuButton.focus();
+          menuButton.setAttribute('aria-expanded', 'false');
+          menu.classList.remove('open');
+          break;
+        case 37: // Left arrow
+          if (currentElement === firstItem) {
+            lastItem.focus();
+          } else {
+            currentElement.previousElementSibling.focus();
+          }
+          break;
+        case 39: // Right arrow
+          if (currentElement === lastItem) {
+            firstItem.focus();
+          } else {
+            currentElement.nextElementSibling.focus();
+          }
+          break;
+      }
+    });
+
+// Obtén los elementos de los iconos
+const icon1 = document.getElementById('icon1');
+const icon2 = document.getElementById('icon2');
+const icon3 = document.getElementById('icon3');
+const icon4 = document.getElementById('icon4');
+const icon5 = document.getElementById('icon5');
+const icon6 = document.getElementById('icon6');
+const icon7 = document.getElementById('icon7');
+const icon8 = document.getElementById('icon8');
+const icon9 = document.getElementById('icon9');
+const icon10 = document.getElementById('icon10');
+const icon11 = document.getElementById('icon11');
+const icon12 = document.getElementById('icon12');
+const icon13 = document.getElementById('icon13');
+const icon14 = document.getElementById('icon14');
+const icon15 = document.getElementById('icon15');
+const icon16 = document.getElementById('icon16');
+const icon17 = document.getElementById('icon17');
+const icon18 = document.getElementById('icon18');
+const icon19 = document.getElementById('icon19');
+const icon20 = document.getElementById('icon20');
+const icon21 = document.getElementById('icon21');
+const icon22 = document.getElementById('icon22');
+const icon23 = document.getElementById('icon23');
+const icon24 = document.getElementById('icon24');
+// ...
+
+// Variable para rastrear el estado del color para cada icono
+let colorChanged1 = false;
+let colorChanged2 = false;
+let colorChanged3 = false;
+let colorChanged4 = false;
+let colorChanged5 = false;
+let colorChanged6 = false;
+let colorChanged7 = false;
+let colorChanged8 = false;
+let colorChanged9 = false;
+let colorChanged10 = false;
+let colorChanged11 = false;
+let colorChanged12 = false;
+let colorChanged13 = false;
+let colorChanged14 = false;
+let colorChanged15 = false;
+let colorChanged16 = false;
+let colorChanged17 = false;
+let colorChanged18 = false;
+let colorChanged19 = false;
+let colorChanged20 = false;
+let colorChanged21 = false;
+let colorChanged22 = false;
+let colorChanged23 = false;
+let colorChanged24 = false;
+// ...
+
+// Manejadores de clic para cambiar el color de cada icono
+icon1.addEventListener('click', () => {
+  if (!colorChanged1) {
+    icon1.style.color = 'red'; // Cambia el color a verde
+    colorChanged1 = true;
+  } else {
+    icon1.style.color = ''; // Restaura el color original
+    colorChanged1 = false;
+  }
+});
+
+icon2.addEventListener('click', () => {
+  if (!colorChanged2) {
+    icon2.style.color = 'red'; // Cambia el color a verde
+    colorChanged2 = true;
+  } else {
+    icon2.style.color = ''; // Restaura el color original
+    colorChanged2 = false;
+  }
+});
+
+icon3.addEventListener('click', () => {
+  if (!colorChanged3) {
+    icon3.style.color = 'red'; // Cambia el color a verde
+    colorChanged3 = true;
+  } else {
+    icon3.style.color = ''; // Restaura el color original
+    colorChanged3 = false;
+  }
+});
+
+
+
+// Repite estos manejadores para los otros 21 iconos
+
+icon4.addEventListener('click', () => {
+  if (!colorChanged4) {
+    icon4.style.color = 'red'; // Cambia el color a verde
+    colorChanged4 = true;
+  } else {
+    icon4.style.color = ''; // Restaura el color original
+    colorChanged4 = false;
+  }
+});
+
+icon5.addEventListener('click', () => {
+  if (!colorChanged5) {
+    icon5.style.color = 'red'; // Cambia el color a verde
+    colorChanged5 = true;
+  } else {
+    icon5.style.color = ''; // Restaura el color original
+    colorChanged5 = false;
+  }
+});
+
+icon6.addEventListener('click', () => {
+  if (!colorChanged6) {
+    icon6.style.color = 'red'; // Cambia el color a verde
+    colorChanged6 = true;
+  } else {
+    icon6.style.color = ''; // Restaura el color original
+    colorChanged6 = false;
+  }
+});
+
+
+icon7.addEventListener('click', () => {
+  if (!colorChanged7) {
+    icon7.style.color = 'red'; // Cambia el color a verde
+    colorChanged7 = true;
+  } else {
+    icon7.style.color = ''; // Restaura el color original
+    colorChanged7 = false;
+  }
+});
+
+icon8.addEventListener('click', () => {
+  if (!colorChanged8) {
+    icon8.style.color = 'red'; // Cambia el color a verde
+    colorChanged8 = true;
+  } else {
+    icon8.style.color = ''; // Restaura el color original
+    colorChanged8 = false;
+  }
+});
+
+icon9.addEventListener('click', () => {
+  if (!colorChanged9) {
+    icon9.style.color = 'red'; // Cambia el color a verde
+    colorChanged9 = true;
+  } else {
+    icon9.style.color = ''; // Restaura el color original
+    colorChanged9 = false;
+  }
+});
+
+
+
+// Repite estos manejadores para los otros 21 iconos
+
+icon10.addEventListener('click', () => {
+  if (!colorChanged10) {
+    icon10.style.color = 'red'; // Cambia el color a verde
+    colorChanged10 = true;
+  } else {
+    icon10.style.color = ''; // Restaura el color original
+    colorChanged10 = false;
+  }
+});
+
+icon11.addEventListener('click', () => {
+  if (!colorChanged11) {
+    icon11.style.color = 'red'; // Cambia el color a verde
+    colorChanged11 = true;
+  } else {
+    icon11.style.color = ''; // Restaura el color original
+    colorChanged11 = false;
+  }
+});
+
+icon12.addEventListener('click', () => {
+  if (!colorChanged12) {
+    icon12.style.color = 'red'; // Cambia el color a verde
+    colorChanged12 = true;
+  } else {
+    icon12.style.color = ''; // Restaura el color original
+    colorChanged12 = false;
+  }
+});
+
+icon13.addEventListener('click', () => {
+  if (!colorChanged13) {
+    icon13.style.color = 'red'; // Cambia el color a verde
+    colorChanged13 = true;
+  } else {
+    icon13.style.color = ''; // Restaura el color original
+    colorChanged13 = false;
+  }
+});
+
+icon14.addEventListener('click', () => {
+  if (!colorChanged14) {
+    icon14.style.color = 'red'; // Cambia el color a verde
+    colorChanged14 = true;
+  } else {
+    icon14.style.color = ''; // Restaura el color original
+    colorChanged14 = false;
+  }
+});
+
+icon15.addEventListener('click', () => {
+  if (!colorChanged15) {
+    icon15.style.color = 'red'; // Cambia el color a verde
+    colorChanged15 = true;
+  } else {
+    icon15.style.color = ''; // Restaura el color original
+    colorChanged15 = false;
+  }
+});
+
+
+
+// Repite estos manejadores para los otros 21 iconos
+
+icon16.addEventListener('click', () => {
+  if (!colorChanged16) {
+    icon16.style.color = 'red'; // Cambia el color a verde
+    colorChanged16 = true;
+  } else {
+    icon16.style.color = ''; // Restaura el color original
+    colorChanged16 = false;
+  }
+});
+
+icon17.addEventListener('click', () => {
+  if (!colorChanged17) {
+    icon17.style.color = 'red'; // Cambia el color a verde
+    colorChanged17 = true;
+  } else {
+    icon17.style.color = ''; // Restaura el color original
+    colorChanged17 = false;
+  }
+})
+
+icon18.addEventListener('click', () => {
+  if (!colorChanged18) {
+    icon18.style.color = 'red'; // Cambia el color a verde
+    colorChanged18 = true;
+  } else {
+    icon18.style.color = ''; // Restaura el color original
+    colorChanged18 = false;
+  }
+});
+
+
+icon19.addEventListener('click', () => {
+  if (!colorChanged19) {
+    icon19.style.color = 'red'; // Cambia el color a verde
+    colorChanged19 = true;
+  } else {
+    icon19.style.color = ''; // Restaura el color original
+    colorChanged19 = false;
+  }
+});
+
+icon20.addEventListener('click', () => {
+  if (!colorChanged20) {
+    icon20.style.color = 'red'; // Cambia el color a verde
+    colorChanged20 = true;
+  } else {
+    icon20.style.color = ''; // Restaura el color original
+    colorChanged20 = false;
+  }
+});
+
+icon21.addEventListener('click', () => {
+  if (!colorChanged21) {
+    icon21.style.color = 'red'; // Cambia el color a verde
+    colorChanged21 = true;
+  } else {
+    icon21.style.color = ''; // Restaura el color original
+    colorChanged21 = false;
+  }
+});
+
+
+
+// Repite estos manejadores para los otros 21 iconos
+
+icon22.addEventListener('click', () => {
+  if (!colorChanged22) {
+    icon22.style.color = 'red'; // Cambia el color a verde
+    colorChanged22 = true;
+  } else {
+    icon22.style.color = ''; // Restaura el color original
+    colorChanged22 = false;
+  }
+});
+
+icon23.addEventListener('click', () => {
+  if (!colorChanged23) {
+    icon23.style.color = 'red'; // Cambia el color a verde
+    colorChanged23 = true;
+  } else {
+    icon23.style.color = ''; // Restaura el color original
+    colorChanged23 = false;
+  }
+});
+
+icon24.addEventListener('click', () => {
+  if (!colorChanged24) {
+    icon24.style.color = 'red'; // Cambia el color a verde
+    colorChanged24 = true;
+  } else {
+    icon24.style.color = ''; // Restaura el color original
+    colorChanged24 = false;
+  }
+});
+  </script>
+</body>
+</html>
