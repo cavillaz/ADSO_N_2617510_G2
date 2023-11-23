@@ -1,14 +1,17 @@
 <?php
-$servername = "localhost";
-$database = "baseAPCR";
+
+// Parametros de conexion de base de datos
+$servername = "127.0.0.1";
 $username = "root";
-$password = "";
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $database);
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+$password = "root";
+$dbname = "baseAPCR";
+
+// Crear conexión
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar la conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
 }
-echo "Connected successfully";
-mysqli_close($conn);
+
 ?>

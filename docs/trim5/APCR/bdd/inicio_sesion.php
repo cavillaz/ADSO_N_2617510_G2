@@ -1,43 +1,32 @@
 <?php
-// Iniciar sesión
 session_start();
- 
-// Conexión a la base de datos
-$db = mysqli_connect('127.0.0.1', 'root', 'root', 'baseAPCR');
- 
-$errors = [];
 
-// Si se ha enviado el formulario
-if (isset($_POST['ingresar'])) {
-  $correo = mysqli_real_escape_string($db, $_POST['correo']);
-  $contrasena = mysqli_real_escape_string($db, $_POST['contrasena']);
- 
-  // Comprobar si el nombre de usuario es válido
-  $query = "SELECT * FROM residente WHERE correo='$correo'";
-  $results = mysqli_query($db, $query);
- 
-  if (mysqli_num_rows($results) == 1) {
-    // Nombre de usuario válido, verificar contraseña
-    $row = mysqli_fetch_assoc($results);
-    if (password_verify($contrasena, $row['contrasena'])) {
-      // Inicio de sesión válido
-      $_SESSION['correo'] = $correo;
-      header('location: index.html');
+// Incluir el archivo de conexión a la base de datos
+include 'conexion.php';
+
+// Compruebe si el formulario está enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    // Recuperar datos del formulario
+    $correo = $_POST["correo"];
+    $contrasena = $_POST["contrasena"];
+
+    // Consulta SQL para verificar las credenciales del usuario
+    $sql = "SELECT * FROM residente WHERE correo='$correo' AND contrasena='$contrasena'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows == 1) {
+        // Usuario autenticado exitosamente
+        $_SESSION["loggedin"] = true;
+        $_SESSION["correo"] = $correo;
+        header("Location: ../barra.html"); // Redirigir a una página de bienvenida o panel de control
+        exit();
     } else {
-      // Contraseña inválida
-      $errors[] = "Nombre de usuario/contraseña inválidos";
+        // Error de autenticación
+        echo "Usuario o contraseña incorrectos";
     }
-  } else {
-    // Nombre de usuario inválido
-    $errors[] = "Nombre de usuario/contraseña inválidos";
-  }
-    if (count($errors) > 0) {
-      echo "<div class='alert alert-danger' role='alert'>";
-      foreach ($errors as $error) {
-          echo $error . "<br>";
-      }
-      echo "</div>";
-  } 
+
+    // Cerrar la conexión de la base de datos
+    $conn->close();
 }
 ?>
-
