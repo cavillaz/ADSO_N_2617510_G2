@@ -289,24 +289,6 @@
         $nueva_apartamento = $_POST['apartamento'];
         $nuevo_celular = $_POST['celular'];
         
-    
-   /*      // Procesa la solicitud de actualización si se ha enviado un formulario
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['guardar'])) {
-        $identificacion_actualizar = $_POST['identificacion'];
-        $nuevos_nombres = $conexion->real_escape_string($_POST['nombres']);
-        $nuevo_sexo = $conexion->real_escape_string($_POST['sexo']);
-        $nueva_direccion = $conexion->real_escape_string($_POST['direccion']);
-        $nuevo_correo = $conexion->real_escape_string($_POST['correo']);
-        $nueva_fecha_nacimiento = $_POST['fecha_nac'];
-        $nuevo_movil = $conexion->real_escape_string($_POST['movil']);
-        $nueva_edad = $_POST['edad']; */
-    
-        
-/* 
-            if (!isset($identificacion_actualizar) || empty($identificacion_actualizar)) {
-            echo "ID de usuario no válido";
-            exit();
-            } */
 
         // Prepara la consulta SQL para actualizar el usuario
         $sql_actualizar = "UPDATE residente SET nombres_usuario = '$nuevos_nombres_usuario', correo = '$nuevo_correo', torre = '$nueva_torre', apartamento = '$nueva_apartamento', celular = '$nuevo_celular' WHERE identificacion = $identificacion_actualizar";
@@ -343,7 +325,7 @@
             echo "<td><input type='text' name='torre' value='{$fila['torre']}' required></td>";
             echo "<td><input type='text' name='apartamento' value='{$fila['apartamento']}' required></td>";
             echo "<td><input type='tel' name='celular' value='{$fila['celular']}' required></td>";
-            echo "<td><button type='submit' class='eliminar' name='eliminar'>Guardar</button></form>";
+            echo "<td><button type='submit' class='eliminar' name='guardar'>Guardar</button></form>";
             echo "</tr>";
         }
 
