@@ -218,7 +218,7 @@
         border-radius: 4px;
         cursor: pointer;
         margin: 5%;
-        margin-left: 25%;
+        margin-left: 48%;
       }
       .button button:hover {
       background-color: #c1121e81;
@@ -227,18 +227,29 @@
             width: 50%;
             margin: 20px auto;
             border-collapse: collapse;
+            text-decoration: bold;  
         }
 
         th, td {
-            border: 1px solid #dddddd;
+            border: 2px solid black;
             text-align: left;
             padding: 8px;
+            text-align: center;
+            font-weight: bold;
+            
+          
         }
 
         th {
-            background-color: #4CAF50;
+            background-color: #c1121f;
             color: white;
+            
+            
         }
+    .eliminar {
+      background-color: #c1121f;
+      color: white;
+    }
     
   </style>
 </head> 
@@ -301,7 +312,7 @@
 
     if ($resultado->num_rows > 0) {
         echo "<table>";
-        echo "<tr><th>Identificación</th><th>Nombres</th><th>Correo</th><th>Torre</th><th>Apartamento</th><th>Celular</th><th>Clave</th><th>Seleccionar</th></tr>";
+        echo "<tr><th>Identificación</th><th>Nombres</th><th>Correo</th><th>Torre</th><th>Apartamento</th><th>Celular</th><th>Seleccionar</th><th>Modificar</th></tr>";
 
         while ($fila = $resultado->fetch_assoc()) {
             echo "<tr>";
@@ -311,13 +322,21 @@
             echo "<td>{$fila['torre']}</td>";
             echo "<td>{$fila['apartamento']}</td>";
             echo "<td>{$fila['celular']}</td>";
-            echo "<td>{$fila['clave']}</td>";
+            
             echo "<td>
                     <form method='post' action='{$_SERVER['PHP_SELF']}'>
                         <input type='hidden' name='eliminar' value='{$fila['identificacion']}'>
-                        <button type='submit' class='eliminar'>Eliminar</button>
+                        <button type='submit' class='eliminar' >Eliminar</button>
                     </form>
                 </td>";
+            echo "<td>
+                    <form method= 'post' action= 'usuarios_modificado.php'>
+                       <input type='submit' name='eliminar' value='Modificar' class ='eliminar'>
+                     </form>
+                      
+        
+      
+                  </td>";
             echo "</tr>";
         }
 
@@ -329,99 +348,9 @@
     // Cierra la conexión a la base de datos
     $conn->close();
     ?>
-     <!--  <tbody>
-        <tr>
-          <td>3</td>
-          <td>juan camilo</td>
-          <td><del>&times;</del></td>
-          <td></td>
-          <td></td>
-          <td><input type="checkbox" id="tachar"></td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Jacob</td>
-          <td></td>
-          <td></td>
-          <td><del>&times;</del></td>
-          <td><input type="checkbox" id="tachar"></td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Larry the Bird</td>
-          <td></td>
-          <td></td>
-          <td><del>&times;</del></td>
-          <td><input type="checkbox" id="tachar"></td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Larry the Bird</td>
-          <td></td>
-          <td></td>
-          <td><del>&times;</del></td>
-          <td><input type="checkbox" id="tachar"></td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Larry the Bird</td>
-          <td></td>
-          <td></td>
-          <td><del>&times;</del></td>
-          <td><input type="checkbox" id="tachar"></td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Larry the Bird</td>
-          <td></td>
-          <td><del>&times;</del></td>
-          <td></td>
-          <td><input type="checkbox" id="tachar"></td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Larry the Bird</td>
-          <td></td>
-          <td></td>
-          <td><del>&times;</del></td>
-          <td><input type="checkbox" id="tachar"></td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Larry the Bird</td>
-          <td></td>
-          <td></td>
-          <td><del>&times;</del></td>
-          <td><input type="checkbox" id="tachar"></td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Larry the Bird</td>
-          <td></td>
-          <td></td>
-          <td><del>&times;</del></td>
-          <td><input type="checkbox" id="tachar"></td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Larry the Bird</td>
-          <td></td>
-          <td></td>
-          <td><del>&times;</del></td>
-          <td><input type="checkbox" id="tachar"></td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Larry the Bird</td>
-          <td></td>
-          <td></td>
-          <td><del>&times;</del></td>
-          <td><input type="checkbox" id="tachar"></td>
-        </tr>
-      </tbody> -->
     </table>
     <div class="button">
-      <button onclick="location.href='../APCR/usuarios1.html'"id="seleccionar">Seleccionar</button>
+      <!-- <button onclick="location.href='../APCR/usuarios1.html'"id="seleccionar">Seleccionar</button> -->
       <button onclick="location.href='../APCR/asdministrador_usuario.html'" id="salir">Salir</button>
     </div>
   </div>
