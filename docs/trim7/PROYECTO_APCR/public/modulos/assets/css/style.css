@@ -1,0 +1,138 @@
+html, body {
+  height: 100% !important;
+}
+.tableApp{
+  min-height: 100% !important;
+  height: 100% !important;
+}
+body{
+  text-transform: uppercase;
+}
+input{
+  text-transform: lowercase;
+}
+button{
+  text-transform: uppercase;
+}
+.preload{
+  width: 100%;  
+  height: 100vh;
+  position: fixed;
+  z-index: 2000;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.174);
+}
+
+
+  .calendar {
+    background: #4ECDC4;
+    width: 80%;
+    max-width: 600px;
+    margin: 1em auto;
+    padding: .5em 0; }
+    .calendar__info {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      padding: 0 2em;
+      font-size: 1.2em;
+      text-transform: uppercase; }
+    .calendar__prev, .calendar__next {
+      color: #C7F464;
+      cursor: pointer;
+      font-size: 1.3em; }
+    .calendar__prev {
+      margin-right: auto; }
+    .calendar__next {
+      margin-left: auto; }
+    .calendar__week, .calendar__dates {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-gap: 10px; }
+    .calendar__month, .calendar__year {
+      padding: .5em 1em; }
+    .calendar__item {
+      text-align: center;
+      line-height: 2; }
+    .calendar__today {
+      background: lightcoral;
+      color: white;
+      width: 50%;
+      border-radius: 50%;
+      margin: auto; }
+    .calendar__last-days {
+      opacity: .3; }
+  
+
+ .tabla-parqueaderos {
+    margin: 0 auto; /* Centrar la tabla horizontalmente */
+    width: 90%; /* Ocupar el 90% del ancho de la pantalla */
+   
+ }
+
+
+.icono-parqueadero {
+  margin: 20px; /* Separación entre iconos */
+  text-align: center; /* Centrar el contenido dentro del icono */
+  font-size: 30px; /* Tamaño de fuente para los iconos */
+}
+
+.icono-parqueadero:hover {
+  opacity: 0.7; /* Cambiar la opacidad al pasar sobre los iconos */
+}
+
+
+
+    .icono-parqueadero {
+        display: inline-block;
+        text-align: center;
+    }
+    .icono-parqueadero.red {
+        color: red;
+    }
+    .icono-parqueadero.green {
+        color: green;
+    }
+    .icono-parqueadero a {
+        color: inherit;
+        text-decoration: none;
+    }
+    .icono-parqueadero a:hover {
+        text-decoration: none;
+    }
+    
+/*------------------------grilla parqueaderos.php------------*/
+
+#container{
+    display: grid;
+    grid-template-columns: 20% 70%;  
+}
+
+#sidebar{
+  grid-template-columns: 1/2;
+}
+
+#parqueaderos{
+  grid-template-columns: 2/2;
+}
+
+#title{
+  text-align: center;
+}
+
+/*------------------------grilla baseusuarios.php------------*/
+#container{
+  display: grid;
+  grid-template-columns: 20% 70%;  
+}
+
+#sidebar{
+grid-template-columns: 1/2;
+}
+
+#baseusuarios{
+grid-template-columns: 2/2;
+}

@@ -1,0 +1,55 @@
+.container-form{
+  background-color:  #0a93f5;
+  border-radius: 10px;
+  box-shadow: 15px 0px 10px 5px gray;
+}
+
+.container-form {
+  background-color: #0a93f5; /* Color principal de la caja */
+  border-radius: 10px; /* Borde redondeado */
+  padding: 20px; /* Espaciado interno */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra suave */
+}
+
+/* Estilos para el texto dentro de la caja de creación de usuario */
+.container-form h3 {
+  color: white; /* Color del texto */
+}
+
+/* Estilos para los botones dentro de la caja de creación de usuario */
+.container-form .btn {
+  background-color: #007bff; /* Color del botón */
+  border-color: #007bff; /* Color del borde del botón */
+}
+
+/* Estilos para el enlace de recuperar contraseña */
+.container-form .link-success {
+  color: #28a745; /* Color del enlace */
+}
+
+/* Estilos para el fondo del body */
+body {
+  background-color: #f8f9fa; /* Color de fondo */
+}
+
+/* Estilos para el modal */
+.modal-content {
+  background-color: #f8f9fa; /* Cambia el color de fondo del modal */
+  border-radius: 10px; /* Agrega bordes redondeados al modal */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Agrega sombra al modal */
+}
+
+.modal-header {
+  background-color: #007bff; /* Cambia el color de fondo del encabezado del modal */
+  color: #ffffff; /* Cambia el color del texto del encabezado del modal */
+  border-radius: 10px 10px 0 0; /* Agrega bordes redondeados solo arriba al encabezado */
+}
+
+.modal-body {
+  padding: 20px; /* Agrega un relleno interno al cuerpo del modal */
+}
+
+.modal-footer {
+  background-color: #f8f9fa; /* Cambia el color de fondo del pie del modal */
+  border-radius: 0 0 10px 10px; /* Agrega bordes redondeados solo abajo al pie */
+}

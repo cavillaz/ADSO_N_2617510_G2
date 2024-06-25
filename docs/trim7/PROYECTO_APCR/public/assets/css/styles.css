@@ -1,0 +1,168 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #212529;
+  width: 280px;
+  height: 100vh; /* 100% de la altura de la ventana */
+  transition: all 0.3s ease;
+}
+
+
+.nav-pills .nav-item .nav-link.active {
+    background-color: blue;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  .nav-pills .nav-item .nav-link.active {
+    background-color: #1a64ee;
+    border-radius: 10px;
+}
+
+
+.nav-item{
+  margin-top: 20px;
+}
+
+.position-relative.collapsed {
+  width: 60px; /* Ancho de la barra lateral colapsada */
+}
+
+.sidebar {
+  width: 280px;
+  transition: width 0.3s ease;
+}
+
+.collapsed-sidebar {
+  width: 80px;
+}
+
+.collapsed-sidebar .nav-link-text {
+  display: none;
+}
+
+.nav-link-icon {
+  margin-right: 5px;
+}
+
+.btn-contraer{
+  background-color: blue;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-transparent {
+  background-color: transparent;
+  border: none;
+}
+
+.btn-transparent:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.hide-text {
+  display: none;
+}
+
+#sidebarToggle span {
+  top: 50px;
+}
+
+.collapsed-sidebar .hide-when-collapsed {
+  display: none;
+}
+
+
+.tableApp{
+  min-height: 100% !important;
+  height: 100% !important;
+}
+body{
+  text-transform: uppercase;
+}
+input{
+  text-transform: lowercase;
+}
+button{
+  text-transform: uppercase;
+}
+.preload{
+  width: 100%;  
+  height: 100vh;
+  position: fixed;
+  z-index: 2000;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.174);
+}
+
+.img-reportes {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente el contenido */
+}
+
+.img-reportes img {
+  width: 800px; /* Cambia el tamaño según tus necesidades */
+  height: 610px; /* Para mantener la proporción de la imagen */
+}
+
+.custom-sidebar-color {
+  background-color:  #0a93f5;
+}
+
+
+.dropdown-menu{
+  background-color:  #0a93f5;
+}
+
+.container-form {
+  background-color: #0a93f5; /* Color principal de la caja */
+  border-radius: 10px; /* Borde redondeado */
+  padding: 20px; /* Espaciado interno */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilos para el texto dentro de la caja de login */
+.container-form h3 {
+  color: white; /* Color del texto */
+}
+
+/* Estilos para los botones dentro de la caja de login */
+.container-form .btn {
+  background-color: #007bff; /* Color del botón */
+  border-color: #007bff; /* Color del borde del botón */
+}
+
+/* Estilos para el enlace de recuperar contraseña */
+.container-form .link-success {
+  color: #28a745; /* Color del enlace */
+}
+.tabla-parqueaderos {
+  text-align: center;
+}
