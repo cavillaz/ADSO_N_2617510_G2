@@ -25,6 +25,8 @@ CREATE TABLE tb_residente (
     clave VARCHAR(455) NOT NULL,
     PRIMARY KEY (id_residente)
 );
+SELECT * FROM tb_residente;
+
 
 -- -----------------------------------------------------
 -- Table tb_admin_porteria
