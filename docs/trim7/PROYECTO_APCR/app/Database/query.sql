@@ -174,3 +174,19 @@ INSERT INTO tb_torres (id_torre, nombre_torre, numero_torre) VALUES
 ('3', 'Torre 3', 3), 
 ('4', 'Torre 4', 4), 
 ('5', 'Torre 5', 5);
+
+
+CREATE TABLE tb_zonas_comunes (
+    id_zona_comun VARCHAR(45) NOT NULL,
+    nombre_zona_comun VARCHAR(45) NOT NULL,
+    numero_zona_comun VARCHAR(10) NOT NULL,
+    PRIMARY KEY (id_zona_comun)
+);
+
+INSERT INTO tb_zonas_comunes  (id_zona_comun, nombre_zona_comun, numero_zona_comun) VALUES 
+('1', 'Zona BBQ', '101'), 
+('2', 'Zona recreativa para niños', '102'), 
+('3', 'Salon comunal piso 1', '103'), 
+('4', 'salon comunal piso 2', '104');
+
+
