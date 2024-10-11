@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class ParqueaderoModel extends Model
 {
     protected $DBGroup          = "default";
-    protected $table            = 'parqueadero';
+    protected $table            = 'tb_parqueadero';
     protected $primaryKey       = 'id_ubicacion';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
